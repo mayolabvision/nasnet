@@ -1,0 +1,3 @@
+[submodule "nevutils"]
+	path = nevutils
+	url = https://github.com/SmithLabNeuro/nevutils.git
