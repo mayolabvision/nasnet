@@ -148,6 +148,7 @@ if ischar(filenameOrNev)
     end
 elseif iscell(filenameOrNev)
     if writelabels, error('can only write labels to nev if a .nev filename was passed.'); end
+    if int16Flag, int16Flag = false; end % only pertains to loading nev, here nev was already passed as input
     spikes = filenameOrNev{1};
     waveforms = filenameOrNev{2}';
     clear filenameOrNev;
