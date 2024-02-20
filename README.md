@@ -8,9 +8,9 @@ To demonstrate how to use a trained network to classify waveforms we have includ
 The network uses TensorFlow and Keras, so it can only be trained in Python. However, the trained network weights are saved as text files and the network is implemented in MATLAB to classify waveforms.  
  
 ## Training a network (Python only)
-1. Download the NASNet folder from GitHub: 
+1. Download the NASNet folder from GitHub (using recursive strategy to ensure submodules are downloaded): 
 ```
-git clone https://github.com/SmithLabNeuro/nasnet.git
+git clone https://github.com/SmithLabNeuro/nasnet.git --recursive
 ```
 2. Install the necessary software/libraries.
   - Note: We have only tested our code’s compatibility with the following versions:
