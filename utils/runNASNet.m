@@ -142,15 +142,16 @@ if ischar(filenameOrNev)
             disp('loading data...')
             load(filenameOrNev);
             if ~exist('waveforms'), error('waveforms must be stored in a variable named "waveforms".'); end
+            if isa(waveforms, 'int16'), error('can only load in MAT data in double format, not int16'); end
             clear filenameOrNev;
         otherwise
             error('file must be a .nev or Nx52 .mat');
     end
 elseif iscell(filenameOrNev)
     if writelabels, error('can only write labels to nev if a .nev filename was passed.'); end
-    if int16Flag, int16Flag = false; end % only pertains to loading nev, here nev was already passed as input
     spikes = filenameOrNev{1};
     waveforms = filenameOrNev{2}';
+    if isa(waveforms, 'int16'), error('can only pass in NEV data in double format, not int16'); end
     clear filenameOrNev;
 else
     error('input must be a .nev or Nx52 .mat or a cell with spikes and waves preloaded');
