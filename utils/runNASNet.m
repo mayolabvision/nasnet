@@ -197,7 +197,7 @@ while nend~=nwaves
     layer2_raw = layer1_out*w2 + repmat(b2',n_loop,1);
     
     %***Sigmoid******
-    layer2_out = 1./(1+exp(-1*(layer2_raw))); %apply sigmoid
+    layer2_out = 1./(1+(exp(-1 .* layer2_raw) + eps)); % apply sigmoid, use eps to help floating point math
     
     net_labels(nstart:nend) = layer2_out;
     counter = counter + 1;
