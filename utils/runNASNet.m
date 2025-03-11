@@ -78,10 +78,10 @@ int16Flag = p.Results.int16Flag;
 %% load trained network
 % cd ../
 try
-    w1 = load(fullfile(netFolder,[netname,'_w_hidden']));
-    b1 = load(fullfile(netFolder,[netname,'_b_hidden']));
-    w2 = load(fullfile(netFolder,[netname,'_w_output']));
-    b2 = load(fullfile(netFolder,[netname,'_b_output']));
+    w1 = load(fullfile(netFolder,[netname,'_w_hidden']), '-ASCII') ;
+    b1 = load(fullfile(netFolder,[netname,'_b_hidden']), '-ASCII');
+    w2 = load(fullfile(netFolder,[netname,'_w_output']), '-ASCII');
+    b2 = load(fullfile(netFolder,[netname,'_b_output']), '-ASCII');
 catch
     error('The network you named does not exist or the files were not named appropriately.')
 end
